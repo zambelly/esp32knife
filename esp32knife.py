@@ -706,6 +706,7 @@ def export_bin2elf(chip, data, filename, board_ext_symbols, board_ext_segments):
             '.flash.rodata' : (0x00, 'WA' ,  0, 0, 16),
             '.flash.text'   : (0x00, 'AX' ,  0, 0, 4),
 
+            '.rtc.data'   : (0x00, 'WA' ,  0, 0, 16),
             '.rtc.text'   : (0x00, 'AX' ,  0, 0, 4),
     }
 
@@ -749,6 +750,8 @@ def export_bin2elf(chip, data, filename, board_ext_symbols, board_ext_segments):
             elf_segment = ".iram_loader.text"
         elif 'RTC_IRAM' in mem_segments:
             elf_segment = ".rtc.text"
+        elif 'RTC_DATA' in mem_segments:
+            elf_segment = ".rtc.data"
         elif 'PADDING' in mem_segments:
             continue
         else:
