@@ -12,13 +12,13 @@ from esp32nvs import *
 def main():
   parser = argparse.ArgumentParser()
   parser.add_argument("nvs_bin_file", help="nvs partition binary file", type=str)
-  parser.add_argument("--type", "-t", help="output type", type=str, choices=["cvs", "text", "json"], default="cvs")
+  parser.add_argument("--type", "-t", help="output type", type=str, choices=["csv", "text", "json"], default="csv")
 
   args = parser.parse_args()
 
   with open(args.nvs_bin_file, 'rb') as fh:
-    if args.type == "cvs":
-      nvs2cvs(fh)
+    if args.type == "csv":
+      nvs2csv(fh)
     elif args.type == "text":
       pages = nvs2txt(fh)
       sys.stdout = sys.stdout = sys.__stdout__ # re-enable print()

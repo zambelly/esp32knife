@@ -31,12 +31,12 @@ esp32knife.py --chip=esp32 load_from_file firmware_nnc2019_full.bin
 esp32knife.py --chip=esp32 -m=nncbadge2019 load_from_file boards/nncbadge2019/firmware_nnc2019_full.bin
 ```
 
-NVS2CVS
+NVS2CSV
 ```bash
-nvs2cvs.py -t=cvs parsed/part.0.nvs
-nvs2cvs.py -t=text parsed/part.0.nvs
-nvs2cvs.py -t=json parsed/part.0.nvs
-nvs2cvs.py -t=cvs espressif/nvs_flash/nvs_partition_generator/sample_multipage_blob.bin
+nvs2csv.py -t=csv parsed/part.0.nvs
+nvs2csv.py -t=text parsed/part.0.nvs
+nvs2csv.py -t=json parsed/part.0.nvs
+nvs2csv.py -t=csv espressif/nvs_flash/nvs_partition_generator/sample_multipage_blob.bin
 ```
 
 

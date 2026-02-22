@@ -50,11 +50,11 @@
             //bin2elf
             //"args": ["--chip=esp32", "-m=nncbadge2020_ctf", "load_from_file", "parsed.nnc2020_v3_ctf/firmware_bootloader.bin"]
 
-            //nvs2cvs
-            //"args": ["-t=cvs", "parsed/part.0.nvs"]
+            //nvs2csv
+            //"args": ["-t=csv", "parsed/part.0.nvs"]
             //"args": ["-t=text", "parsed/part.0.nvs"]
             // "args": ["-t=json", "parsed/part.0.nvs"]
-            //"args": ["-t=cvs", "espressif/nvs_flash/nvs_partition_generator/sample_multipage_blob.bin"]
+            //"args": ["-t=csv", "espressif/nvs_flash/nvs_partition_generator/sample_multipage_blob.bin"]
         }
     ]
 }

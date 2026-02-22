@@ -445,7 +445,7 @@ def get_entries(entries, ename, etype):
     chunks = OrderedDict( sorted(chunks.items()) )
     return (chsize, chunks)
 
-def entries2cvs(parsed):
+def entries2csv(parsed):
     #print(namespaces)
     for ni,nn in namespaces.items():
         print("{},namespace,,".format(nn))
@@ -512,7 +512,7 @@ def entries2cvs(parsed):
                 print(p)
                 assert(0)
 
-def nvs2cvs(fh, blobdatadir = "blob_data"):
+def nvs2csv(fh, blobdatadir = "blob_data"):
     global BLOB_DATA_DIR
     BLOB_DATA_DIR = blobdatadir
     create_empty_dir(BLOB_DATA_DIR)
@@ -564,7 +564,7 @@ def nvs2cvs(fh, blobdatadir = "blob_data"):
             entries.append(entry_data)
         parsed += parse_nvs_entries(entries, entry_state_bitmap_decoded)
 
-    entries2cvs(parsed)
+    entries2csv(parsed)
 
     return True
 

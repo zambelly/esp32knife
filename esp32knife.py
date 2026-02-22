@@ -305,8 +305,8 @@ def memory_segment(image, segname):
     return None
 
 def parse_nvs_partition(partfilename):
-    #cvs
-    logfilename=partfilename+".cvs"
+    #csv
+    logfilename=partfilename+".csv"
     printlog("      Parsing NVS partition: {} to {}".format(partfilename, logfilename))
     flog = open(logfilename, "wt")
     with open(partfilename, 'rb') as fh:
@@ -314,7 +314,7 @@ def parse_nvs_partition(partfilename):
         if flog: 
             sys.stdout = flog
         #pages = esp32nvs.read_nvs_pages(fh,True)
-        pages = esp32nvs.nvs2cvs(fh, NVS_BLOB_DATA_DIR)
+        pages = esp32nvs.nvs2csv(fh, NVS_BLOB_DATA_DIR)
         sys.stdout = std
 
     #text
@@ -504,7 +504,7 @@ def read_firmware_from_device(chip, port, baud, read_efuses=True):
                 f.write(bin(efuses))
         else:
             with espefuse.init_commands(esp=esp) as efuses_cmd:
-                with open(FILE_EFUSES_TXT+".cvs", "wt") as f:
+                with open(FILE_EFUSES_TXT+".csv", "wt") as f:
                     log(f, "EFUSES:")
                     for b in efuses_cmd.efuses.blocks:
                         log(f, "\nName={}\nid={} Alias={} Read_addr=0x{:04x} Write_addr=0x{:04x} len={} read_disable_bit={} write_disable_bit={} key_purpose_name={}".format(
